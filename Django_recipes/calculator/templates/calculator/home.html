@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ГЛАВНАЯ СТРАНИЦА</title>
+</head>
+<body>
+
+    <h1>МЕНЮ</h1>
+    <ul>
+        {% for i in food %}
+        {% if i == 'omlet' %}
+
+        <a href="{% url 'omlet' %}"><h3><li>{{i}}</li></h3></a>
+
+        {% endif %}
+        {% if i == 'pasta' %}
+
+        <a href="{% url 'pasta' %}"><h3><li>{{i}}</li></h3></a>
+        {% endif %}
+        {% if i == 'buter' %}
+
+        <a href="{% url 'buter' %}"><h3><li>{{i}}</li></h3></a>
+        {% endif %}
+        {% endfor %}
+</ul>
+
+
+
+</body>
+</html>

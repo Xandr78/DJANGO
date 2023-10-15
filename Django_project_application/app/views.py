@@ -20,12 +20,20 @@ def home_view(request):
     }
     return render(request, template_name, context)
 
+# def time_view(request):
+#     # обратите внимание – здесь HTML шаблона нет,
+#     # возвращается просто текст
+#     current_time = datetime.datetime.now().time()
+#     msg = f'Текущее время: {current_time}'
+#     return HttpResponse(msg)
+
 def time_view(request):
     # обратите внимание – здесь HTML шаблона нет,
     # возвращается просто текст
-    current_time = datetime.datetime.now().time()
-    msg = f'Текущее время: {current_time}'
-    return HttpResponse(msg)
+    # current_time = datetime.datetime.now().time()
+    # msg = f'Текущее время: {current_time}'
+    context = {'current_time': datetime.datetime.now().time()}
+    return render(request,'app/time.html', context)
 
 def back(request):
     back_func='app/time.html'
